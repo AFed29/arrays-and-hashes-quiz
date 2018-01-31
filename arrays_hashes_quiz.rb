@@ -55,9 +55,9 @@ stops.reverse!
 
 # 10. Print out all the stops using a for loop
 
-# for stop in stops
-#   p stop
-# end
+for stop in stops
+  p stop
+end
 
 
 
@@ -137,6 +137,12 @@ users["Erik"][:lottery_numbers]
 
 users["Avril"][:pets][0][:species]
 
+for pet in users["Avril"][:pets]
+  if pet[:name] == "monty"
+    # p "Monty is a #{pet[:species]}"
+  end
+end
+
 # 5. Get the smallest of Erik's lottery numbers
 
 users["Erik"][:lottery_numbers].min
@@ -163,7 +169,7 @@ users["Erik"][:pets].push({name: "fluffy", species: "dog"})
 
 # 10. Add another person to the users hash
 
- users["Alex"] = {}
+ users["Alex"] = {
 #   twitter: "the__fed",
 #   home_town: "Edinburgh",
 #   pets: [
@@ -172,4 +178,57 @@ users["Erik"][:pets].push({name: "fluffy", species: "dog"})
 #       species: "dog"
 #     }
 #   ]
-# }
+}
+
+
+
+## C. Given the following data structure:
+
+
+united_kingdom = [
+  {
+    name: "Scotland",
+    population: 5295000,
+    capital: "Edinburgh"
+  },
+  {
+    name: "Wales",
+    population: 3063000,
+    capital: "Swansea"
+  },
+  {
+    name: "England",
+    population: 53010000,
+    capital: "London"
+  }
+]
+
+
+# 1. Change the capital of Wales from `"Swansea"` to `"Cardiff"`.
+
+united_kingdom[1][:capital] = "Cardiff"
+
+# 2. Create a Hash for Northern Ireland and add it to the `united_kingdom` array (The capital is Belfast, and the population is 1,811,000).
+
+united_kingdom.push(
+  {
+  name: "Northern Ireland",
+  population: 1_811_000,
+  capital: "Belfast",
+  }
+)
+
+# 3. Use a loop to print the names of all the countries in the UK.
+
+for country in united_kingdom
+  p country
+end
+
+# 4. Use a loop to find the total population of the UK.
+total_pop = 0
+
+for country in united_kingdom
+  total_pop = total_pop + country[:population]
+end
+
+p "The total population of the UK is #{total_pop}"
