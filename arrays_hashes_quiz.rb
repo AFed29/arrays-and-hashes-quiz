@@ -172,7 +172,7 @@ users["Erik"][:pets].push({name: "fluffy", species: "dog"})
 
 # 10. Add another person to the users hash
 
- users["Alex"] = {
+users["Alex"] = {
 #   twitter: "the__fed",
 #   home_town: "Edinburgh",
 #   pets: [
