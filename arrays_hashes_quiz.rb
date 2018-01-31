@@ -16,7 +16,6 @@ stops.unshift("Glasgow Queen Street")
 
 stops.insert(4, "Polmont")
 
-
 # 4. Work out the index position of `"Linlithgow"`
 
 stops.index("Linlithgow")
