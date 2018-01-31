@@ -2,6 +2,8 @@
 
 stops = [ "Croy", "Cumbernauld", "Falkirk High", "Linlithgow", "Livingston", "Haymarket" ]
 
+
+
 # 1. Add `"Edinburgh Waverley"` to the end of the array
 
 stops.push("Edinburgh Waverley")
@@ -39,6 +41,7 @@ stops.at(2)
 stops.at(-5)
 stops.fetch(2)
 stops.fetch(-5)
+
 # stops.each { |stop| p stop if stop == "Falkirk High"}
 
 def find_falkirk_high(array)
