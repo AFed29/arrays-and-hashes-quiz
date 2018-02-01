@@ -31,6 +31,8 @@ stops.delete_at(2)
 # 7. How many stops there are in the array?
 
 stops.length()
+# stops.count()
+# stops.size()
 
 # 8. How many ways can we return `"Falkirk High"` from the array?
 
@@ -147,25 +149,36 @@ end
 
 # 5. Get the smallest of Erik's lottery numbers
 
-users["Erik"][:lottery_numbers].min
+users["Erik"][:lottery_numbers].min()
 
 # 6. Return an array of Avril's lottery numbers that are even
 
 array = []
 
 for num in users["Avril"][:lottery_numbers]
-  array.push(num) if (num % 2 == 0)
+  array.push(num) if (num.even?)
 end
+
+p array
 
 # 7. Erik is one lottery number short! Add the number `7` to be included in his lottery numbers
 
 users["Erik"][:lottery_numbers].push(7)
+
+# users["Erik"][:lottery_numbers] << 7
 
 # 8. Change Erik's hometown to Edinburgh
 
 users["Erik"][:home_town] = "Edinburgh"
 
 # 9. Add a pet dog to Erik called "Fluffy"
+
+# dog = {
+#   name: "fluffy",
+#   species: "dog"
+# }
+#
+# users["Erik"][:pets].push(dog)
 
 users["Erik"][:pets].push({name: "fluffy", species: "dog"})
 
@@ -220,6 +233,14 @@ end
 
 # 2. Create a Hash for Northern Ireland and add it to the `united_kingdom` array (The capital is Belfast, and the population is 1,811,000).
 
+# northern_ireland = {
+#   name: "Northern Ireland",
+#   population: 1_811_000,
+#   capital: "Belfast",
+# }
+#
+# united_kingdom.push(northern_ireland)
+
 united_kingdom.push(
   {
   name: "Northern Ireland",
@@ -231,7 +252,7 @@ united_kingdom.push(
 # 3. Use a loop to print the names of all the countries in the UK.
 
 for country in united_kingdom
-  p country
+  p country[:name]
 end
 
 # 4. Use a loop to find the total population of the UK.
